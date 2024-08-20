@@ -1,0 +1,111 @@
+# LAMP
+
+# LINUX 
+
+Open an SSH client.
+
+Locate your private key file. The key used to launch this instance is trevo_asssss_kp.pem
+
+# Run this command, if necessary, to ensure your key is not publicly viewable.
+
+chmod 400 "trevo_asssss_kp.pem"
+
+# Connect to your instance using its Public DNS:
+
+ec2-54-90-48-105.compute-1.amazonaws.com
+
+# Open Git Bash
+# cd into key pair path
+cd downloads
+
+# ssh into the instance
+ssh -i "trevo_asssss_kp.pem" ubuntu@ec2-54-90-48-105.compute-1.amazonaws.com
+
+
+# APACHE
+
+# to update and upgrade ubuntu 
+
+sudo apt update && sudo apt upgrade -y
+
+# Install Apache using the following command:
+
+sudo apt install apache2 -y
+
+
+# After installation, start the Apache service:
+
+sudo systemctl enable apache2
+
+
+# verify apache installation
+
+sudo systemctl status apache2
+
+
+# PHP
+
+# install software properties
+
+sudo apt install software-properties-common -y
+
+
+# Add the PHP PPA (Personal Package Archive)
+
+# Add the repository that contains the latest PHP versions:
+
+sudo add-apt-repository ppa:ondrej/php
+
+# When prompted, press Enter to confirm.
+
+# update the package List again
+sudo apt update
+
+# install the latest version of php
+sudo apt install php8.2 -y
+
+# install php extensions 
+sudo apt install php8.2-cli php8.2-fpm php8.2-mysql php8.2-curl php8.2-xml php8.2-mbstring php8.2-zip -y
+
+# to confirm package installation
+php -m
+
+# verify the php installation
+php -v
+
+#MYSQL
+
+# Add the MySQL APT Repository
+
+wget https://dev.mysql.com/get/mysql-apt-config_0.8.26-1_all.deb
+
+
+# Install the MySQL APT Config Package
+
+sudo dpkg -i mysql-apt-config_0.8.26-1_all.deb
+
+# Update the Package List Again
+
+sudo apt update
+
+#  Install MySQL Server
+
+sudo apt install mysql-server -y
+
+#  Secure the MySQL Installation
+sudo mysql_secure_installation
+
+
+# Verify the MySQL Installation
+sudo systemctl status mysql
+
+# check mysql version
+mysql --version
+
+# Start and Enable MySQL Service
+sudo systemctl start mysql
+sudo systemctl enable mysql
+
+
+
+# Question Two LEMP 
